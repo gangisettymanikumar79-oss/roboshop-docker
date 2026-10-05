@@ -1,5 +1,5 @@
 name: roboshop
-services::
+services:
   monogdb:
     build: ./mongodb
     image: joindevops/mongodb:v1 # docker build -t joindevops/mongodb:4.0.0
@@ -29,7 +29,7 @@ networks:
     driver: bridge
     external: false # if true it should be created manually, if false docker creates this network
     
-    
+
 
 
 
