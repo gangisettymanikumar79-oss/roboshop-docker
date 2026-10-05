@@ -25,8 +25,8 @@
     default: 
       name: a_network # Use a custom name
       driver_opts:    # pass options to driver for network creation
-      external: flase
-      
+      external: false
+
 
     
 
