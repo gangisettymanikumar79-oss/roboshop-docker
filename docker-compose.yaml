@@ -1,0 +1,37 @@
+  name: roboshop
+  service:
+    monogdb:
+      build: ./mongodb
+      image: joindevops/mongodb:4.0.0 # docker build -t joindevops/mongodb:4.0.0
+      container_name: mongodb # docker run -d --network roboshop joindevops/mongodb:4.0.0
+      vloumes:
+      - mongodb:/data/db # mongodb stores data in /data/db directory
+    catalogue:
+      build: ./catalogue
+      images: joindevops/catalogue 4.0.0
+      container_name: catalogue
+      depends_on:
+       - mongodb
+    frontend:
+      build: ./frontend
+      image: joindevops/frontend:4.0.0
+      container_name: frontend
+      ports:
+      - "80:80"
+      depends_on:
+       - catalogue
+  
+  networks:
+    default: 
+      name: a_network # Use a custom name
+      driver_opts:    # pass options to driver for network creation
+      external: flase
+      
+
+    
+
+
+
+
+
+
