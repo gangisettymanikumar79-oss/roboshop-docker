@@ -22,14 +22,29 @@ services:
     - catalogue
 volumes:
   mongodb:
-  
+  user:
+    build: ./user
+    image: joindevops/user:v1
+    container_name: user
+    environment:
+      MONGO: true
+      REDIS_URL: 'redis://redis:6379'
+      MONGO_URL: "mongodb://mongodb:27017/users"
+
+    depends_on:
+    - redis
+    - mongodb
+  redis:
+    image: redis:7
+    container_name: redis
+
 networks:
   default: # this means all the services in this file use this network
     name: roboshop
     driver: bridge
     external: false # if true it should be created manually, if false docker creates this network
     
-    
+
 
 
 
