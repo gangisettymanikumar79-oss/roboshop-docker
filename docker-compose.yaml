@@ -29,6 +29,7 @@ networks:
     driver: bridge
     external: false # if true it should be created manually, if false docker creates this network
     
+    
 
 
 
