@@ -22,9 +22,12 @@
        - catalogue
   
   networks:
-  default:
-    external: false
-    
+  default: # this means all the services in this file use this network
+    name: roboshop
+    driver: bridge
+    external: false # if true it should be created manually, if false docker creates this network
+
+
 
 
     
