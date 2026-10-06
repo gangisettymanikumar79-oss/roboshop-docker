@@ -2,19 +2,19 @@ name: roboshop
 services:
   monogdb:
     build: ./mongodb
-    image: manigangisetty/mongodb:v1 # docker build -t joindevops/mongodb:4.0.0
+    image: manigangisetty/mongodb:v3 # docker build -t joindevops/mongodb:4.0.0
     container_name: mongodb # docker run -d --network roboshop joindevops/mongodb:4.0.0
     volumes:
     - mongodb:/data/db # mongodb stores data in /data/db directory
   catalogue:
     build: ./catalogue
-    image: manigangisetty/catalogue:v1
+    image: manigangisetty/catalogue:v3
     container_name: catalogue
     depends_on:
     - mongodb
   frontend:
     build: ./frontend
-    image: manigangisetty/frontend:v1
+    image: manigangisetty/frontend:v3
     container_name: frontend
     ports:
     - "80:80"
@@ -23,7 +23,7 @@ services:
 
   user:
     build: ./user
-    image: manigangisetty/user:v1
+    image: manigangisetty/user:v3
     container_name: user
     environment:
       MONGO: true
@@ -45,7 +45,7 @@ networks:
 volumes:
   mongodb: # docker volume create mongodb
   redis: # docker volume create redis 
-  
+
 
 
   
