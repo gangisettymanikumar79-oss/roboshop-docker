@@ -53,7 +53,7 @@ services:
     image: manigangisetty/mysql:v4
     container_name: mysql
     environment:
-    MYSQL_ROOT_PASSWORD: "Roboshop@1"
+      MYSQL_ROOT_PASSWORD: "Roboshop@1"
 
 
 
