@@ -53,7 +53,7 @@ services:
     container_name: mysql
     environment:
     MYSQL_ROOT_PASSWORD: "Roboshop@1"
-    
+
 
 
 networks:
@@ -64,6 +64,7 @@ networks:
 volumes:
   mongodb: # docker volume create mongodb
   redis: # docker volume create redis 
+  
 
 
 
