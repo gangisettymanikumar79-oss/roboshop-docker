@@ -22,6 +22,8 @@ services:
     - catalogue
     - user
     - cart
+    - shipping
+    - payment
 
   user:
     build: ./user
@@ -74,7 +76,7 @@ services:
     - user
     - cart
     - rabbitmq
-    
+
   redis:
     image: redis:7
     container_name: redis
