@@ -47,6 +47,7 @@ services:
   redis:
     image: redis:7
     container_name: redis
+    
   mysql:
     build: ./mysql
     image: manigangisetty/mysql:v4
@@ -64,7 +65,7 @@ networks:
 volumes:
   mongodb: # docker volume create mongodb
   redis: # docker volume create redis 
-  
+
 
 
 
