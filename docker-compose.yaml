@@ -47,6 +47,13 @@ services:
   redis:
     image: redis:7
     container_name: redis
+  mysql:
+    build: ./mysql
+    image: manigangisetty/mysql:v4
+    container_name: mysql
+    environment:
+    MYSQL_ROOT_PASSWORD: "Roboshop@1"
+
 
 networks:
   default: # this means all the services in this file use this network
