@@ -23,7 +23,7 @@ services:
 
   user:
     build: ./user
-    image: manigangisetty/user:v3
+    image: manigangisetty/user:v4
     container_name: user
     environment:
       MONGO: true
