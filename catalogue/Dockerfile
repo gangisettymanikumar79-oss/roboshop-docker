@@ -6,8 +6,6 @@ COPY *.js .
 # node_modules
 RUN npm install
 
-
-
 FROM node:20.20.2-alpine3.22 
 WORKDIR /app
 EXPOSE 8080
@@ -18,11 +16,6 @@ RUN addgroup -S roboshop && adduser -S -G roboshop roboshop && \
 COPY --from=builder /app /app
 USER roboshop
 CMD ["node", "server.js"]
-
-
-
-
-
 
 
 
