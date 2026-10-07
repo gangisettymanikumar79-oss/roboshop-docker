@@ -85,7 +85,7 @@ services:
     build: ./mysql
     image: manigangisetty/mysql:v4
     container_name: mysql
-    command: --mysql-native-password=ON --innodb-lock_wait_timeout=120
+    # command: --mysql-native-password=ON --innodb-lock_wait_timeout=120
     environment:
       MYSQL_ROOT_PASSWORD: "Roboshop@1"
 
@@ -108,7 +108,7 @@ volumes:
   redis: # docker volume create redis 
   mysql: # docker volume create mysql
   rabbitmq: # docker volume create rabbitmq
-  
+
 
 
   
