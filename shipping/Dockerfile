@@ -16,6 +16,7 @@ USER roboshop
 CMD ["java", "-jar", "shipping.jar"]
 
 
+
 # FROM maven:3.9.16
 # WORKDIR /app
 # COPY pom.xml .
