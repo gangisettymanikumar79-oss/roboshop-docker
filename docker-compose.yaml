@@ -2,19 +2,19 @@ name: roboshop
 services:
   mongodb:
     build: ./mongodb
-    image: manigangisetty/mongodb:v3 # docker build -t joindevops/mongodb:4.0.0
+    image: manigangisetty/mongodb:4.0.0 # docker build -t joindevops/mongodb:4.0.0
     container_name: mongodb # docker run -d --network roboshop joindevops/mongodb:4.0.0
     volumes:
     - mongodb:/data/db # mongodb stores data in /data/db directory
   catalogue:
     build: ./catalogue
-    image: manigangisetty/catalogue:v3
+    image: manigangisetty/catalogue:4.0.0
     container_name: catalogue
     depends_on:
     - mongodb
   frontend:
     build: ./frontend
-    image: manigangisetty/frontend:v3
+    image: manigangisetty/frontend:4.0.0
     container_name: frontend
     ports:
     - "80:80"
@@ -27,7 +27,7 @@ services:
 
   user:
     build: ./user
-    image: manigangisetty/user:v4
+    image: manigangisetty/user:4.0.0
     container_name: user
     environment:
       MONGO: true
@@ -35,7 +35,7 @@ services:
       MONGO_URL: "mongodb://mongodb:27017/users"
   cart:
     build: ./cart
-    image: manigangisetty/cart:v4
+    image: manigangisetty/cart:4.0.0
     container_name: cart
     environment:
       REDIS_HOST: redis
@@ -48,7 +48,7 @@ services:
 
   shipping:
     build: ./shipping
-    image: manigangisetty/shipping:v4
+    image: manigangisetty/shipping:4.0.0
     container_name: shipping
     environment:
       CART_ENDPOINT: "cart:8080"
@@ -62,7 +62,7 @@ services:
 
   payment:
     build: ./payment
-    image: manigangisetty/payment:v4
+    image: manigangisetty/payment:4.0.0
     container_name: payment
     environment:
       CART_HOST: "cart"
@@ -85,7 +85,7 @@ services:
     
   mysql:
     build: ./mysql
-    image: manigangisetty/mysql:v4
+    image: manigangisetty/mysql:4.0.0
     container_name: mysql
     # command: --mysql-native-password=ON --innodb-lock_wait_timeout=120
     environment:
