@@ -19,6 +19,7 @@ CMD ["node", "server.js"]
 
 
 
+
 # FROM node:20
 # # this creates /app and move there
 # WORKDIR /app
@@ -28,6 +29,8 @@ CMD ["node", "server.js"]
 # ENV MONGO="true" \
 #     MONGO_URL="mongodb://mongodb:27017/catalogue"
 # CMD ["node", "server.js"]
+
+
 
 
 
