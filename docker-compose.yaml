@@ -85,7 +85,7 @@ services:
     
   mysql:
     build: ./mysql
-    image: manigangisetty/mysql:4.0.0
+    image: manigangisetty/mysql:5.0.0
     container_name: mysql
     # command: --mysql-native-password=ON --innodb-lock_wait_timeout=120
     environment:
